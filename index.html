@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>NIRA-Music Player</title>
+  <link rel="icon" type="image/x-icon" href="images/N Note Music Logo.jpg">
+  <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'><link rel="stylesheet" href="./style.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="app.css">
+  <link rel="javascript" href="slidescript.js">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:400,700">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'><link rel="stylesheet" href="./style.css">
+  <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'><link rel="stylesheet" href="./style.css">
+  <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'><link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100&effect=neon">
+
+</head>
+<body style="background-color: #000;">
+<!-- partial:index.partial.html -->
+<div class="sidebar">
+  <div class="logo-details">
+    <div class="logo_name">NIRA</div>
+    <img class='bx bx-menu'src="images/N_Note_Music_Logo-removebg-preview.png" width="58px" height="58px" alt="profileImg" id="btn">
+  </div>
+  <ul class="nav-list">
+    <li>
+      <i class='bx bx-search'></i>
+      <input type="text" placeholder="Search...">
+      <span class="tooltip" onclick="SaavnSearch()">Search</span>
+    </li>
+    <li>
+      <a href="#">
+        <i class='bx bx-grid-alt'></i>
+        <span class="links_name">Library</span>
+      </a>
+      <span class="tooltip">Library</span>
+    </li>
+    <li>
+      <a href="#">
+        <i class='bx bx-user'></i>
+        <span class="links_name">Playlist</span>
+      </a>
+      <span class="tooltip">Playlist</span>
+    </li>
+    <li>
+      <a href="#">
+        <i class='bx bx-folder'></i>
+        <span class="links_name">Downloads</span>
+      </a>
+      <span class="tooltip">Downloads</span>
+    </li>
+    <li>
+      <a href="#">
+        <i class='bx bx-heart'></i>
+        <span class="links_name">Liked Songs</span>
+      </a>
+      <span class="tooltip">Liked Songs</span>
+    </li>
+    <li>
+    <li>
+      <a href="#">
+        <i class='bx bx-cog'></i>
+        <span class="links_name">Setting</span>
+      </a>
+      <span class="tooltip">Setting</span>
+    </li>
+    <li class="profile">
+      <div class="profile-details">
+        <img src="images/N_Note_Music_Logo-removebg-preview.png" alt="profileImg">
+        <div class="name_job">
+          <div class="name">NIRA</div>
+          <div class="job">Music player</div>
+        </div>
+      </div>
+      <i class='bx bx-log-out' id="log_out"></i>
+    </li>
+  </ul>
+</div>
+<!-- AUDIO PLAYER-->
+<nav>
+  
+    <img src="images/nira-high-resolution-logo-transparent.png"class="text-center" style="width: 10%;height: 50px;margin: 11px 5% 15px; alt="logo">
+</nav></br></br>
+    <div class="font-effect-neon">BEHIND EVERY FAVORITE<br> SONG,THERE IS AN UNTOLD STORY</div>
+      <div class="tab-content">
+          <div class="tab-pane active" role="tabpanel" id="tab-1">
+            <div class="container" style="padding: 0px;">
+              
+              <section class="highlight-clean" style="background: #000;color: rgb(249,249,249);padding-top: 20px;">
+               
+                  <div class="text-center">
+                    <div class="intro">
+                      <select id="saavn-bitrate">
+                          <option value="4">320kbps</option>
+                          <option value="3" selected="">160kbps</option>
+                          <option value="2">96kbps</option>
+                          <option value="1">48kbps</option>
+                      </select>
+                  <p class="text-center" style="padding: 0px;"></p>
+                 
+                          <form class="text-center" action="#" method="get">
+                              <div style="width: 95%;margin: auto;padding: 3px;" placeholder="Enter Song, Artist or Album name"><input class="form-control float-left fit-content" type="text" id="saavn-search-box" style="margin: 22px;color:#FFF;max-width: 100%;width: 75%;" placeholder="Enter Name, Year, Artist">
+                                <button class="btn btn-primary" id="saavn-search-trigger" type="submit" style="text-align: center;" onclick="SaavnSearch()"> <i class='bx bx-search'></i></button></div>
+                          </form></br>
+                          <h5 class="text-uppercase text-center" style="text-align: center; color: rgb(0, 255, 55)7;">                 BASED ON THE SEARCH RESULTS</h5>
+                      </div>
+                      
+                          <div id="saavn-results" style="margin-bottom: 20px;">
+                              <h5>Featured</h5>
+                          </div>
+                          <div class="text-center" style="width:100%"><button id="loadmore" style="width: 100%;">Load More</button></div>
+                          <div class="button-container">
+                          </div>
+                      <p class="footer" align="center">
+                        "Immerse yourself in the symphony of life, where each note is a chapter, and every melody tells a story. Let the music be the soundtrack to your journey, echoing the highs and lows, the joy and sorrow, creating a tapestry of memories that lasts a lifetime."
+                      </p>
+                      <div style="padding-bottom: 40px;">
+                      </div>
+                  </div>
+              </section>
+          </div>
+      </div>
+  </div>
+</div>
+    <div id="audio-player" style="z-index: 99;background: #00000033;color: #fff; width: 70%;margin: 0px;color: var(--light);backdrop-filter: blur(4px);border-top-left-radius: 10px; left: 250px; border-top-right-radius: 20px;">
+        <div class="row" style="margin: 0px;">
+            <div class="col-auto fit-content" style="padding: 0px;">
+                <img class="img-fluid d-inline" id="player-image" style="height: 75px;width: 75px;border-radius: 10px;" src="https://i.pinimg.com/originals/ed/54/d2/ed54d2fa700d36d4f2671e1be84651df.jpg" loading="lazy">
+            </div>
+            <div class="col fit-content" style="padding: 0px;">
+                <div style="max-height: 24px;max-width: 95%;word-wrap: normal; padding-left: 20px;"><span id="player-name">Song</span><span><br></span><span id="player-album">Album</span></div><br>
+                <audio id="player" controls="controls" controlsList="nodownload" style="width: 100%;height: 30px; padding-left: 20px; padding-top:5px;">
+                    <source id="audioSource" src=""></source>
+                    Your browser does not support the audio format.
+                </audio>
+            </div>
+        </div>
+    </div>
+    <style>
+        /* Three columns on desktop */
+        @media screen  {
+        .song-container {
+          width:fit-content;
+          margin: 0 342px 58px 41px;
+}
+        }
+        /* Two columns on desktop */
+        @media screen  {
+        .song-container {
+            width: fit-content;
+            margin: 0 10px 20px 10px;
+        }
+        }
+        /* One column on mobile */
+        @media screen {
+        .song-container {
+            width: auto;
+            margin: 0 10px 20px 10px;
+        }
+        }
+        .search-toggle-container {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        width: 95%;
+        margin: 0 auto;
+        }
+        .search-toggle {
+        background: rgba(0, 0, 0, 0.1);
+        color: #fff;
+        font-size: 18px;
+        font-family: Aclonica, sans-serif;
+        border-style: none;
+        }
+        .search-toggle:nth-child(10n+1){color:#ceea82}.search-toggle:nth-child(10n+2){color:#70cee2}.search-toggle:nth-child(10n+3){color:#ef2b2d}.search-toggle:nth-child(10n+4){color:#23b805}.search-toggle:nth-child(10n+5){color:var(--primary)}.search-toggle:nth-child(10n+6){color:#cee007}.search-toggle:nth-child(10n+7){color:#ff77a8}.search-toggle:nth-child(10n+8){color:#21a9af}.search-toggle:nth-child(10n+9){color:var(--warning)}.search-toggle:nth-child(10n+10){color:#e316e7}
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/functions.js"></script>
+    <script src="assets/js/saavn-search.js"></script>
+    <script  src="./script.js"></script>
+  <div class="container__footer">
+      <img src="images/nira-high-resolution-logo-transparent.png" style="width: 15%;height: 50px;" alt="logo" class="nav-logo">
+      <div class="footer__handles">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path fill="#FFF" d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.407 0 22.675 0z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="20"><path fill="#FFF" d="M24 2.557a9.83 9.83 0 01-2.828.775A4.932 4.932 0 0023.337.608a9.864 9.864 0 01-3.127 1.195A4.916 4.916 0 0016.616.248c-3.179 0-5.515 2.966-4.797 6.045A13.978 13.978 0 011.671 1.149a4.93 4.93 0 001.523 6.574 4.903 4.903 0 01-2.229-.616c-.054 2.281 1.581 4.415 3.949 4.89a4.935 4.935 0 01-2.224.084 4.928 4.928 0 004.6 3.419A9.9 9.9 0 010 17.54a13.94 13.94 0 007.548 2.212c9.142 0 14.307-7.721 13.995-14.646A10.025 10.025 0 0024 2.557z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path fill="#FFF" d="M12 0C5.373 0 0 5.372 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 01.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path fill="#FFF" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+      
+      </div>
+  
+    </div>
+  </br>
+</br>
+</br>
+</br>
+  </div>
+
+</body>
+</html>
+
