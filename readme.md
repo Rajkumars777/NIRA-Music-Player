@@ -45,7 +45,4 @@ Explore the different sections of the music player.
 -jQuery
 
 
-Disclaimer
-This content is not affiliated with, endorsed, sponsored, or specifically approved by any third-party music provider like Gaana, Saavn, Spotify. The application is not responsible for any copyright material.Original design by wiz64
-Re-Designed by RAJ
-I am not responsible for any Third-Party Copyright Material, We do not host any copyrighted material on our servers or accounts.
+THANK YOU
