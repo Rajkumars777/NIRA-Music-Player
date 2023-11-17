@@ -1,23 +1,12 @@
-# Saavn
-
- <p>Playing high quality songs, over your web browser, ad-free experience, High-Quality Music upto 320kbps</p>
- 
+NIRA-Music Player
+Welcome to the NIRA-Music Player, a web-based music player with a sleek design and powerful features.
+ <p>Playing high quality songs, over your web browser, ad-free experience, High-Quality Music upto 320kbps</p> 
 ---
-
-## Live Preview
-Preview is available at the links below : <br>
-[saavn-web-ui.vercel.app](https://saavn-web-ui.vercel.app/)<br>
-[saavn.codeforkers.tk](https://saavn.codeforkers.tk)
-
 ## Details
-> Status : `In Development`<br>
-Version : `v3.0` <br>
-Developers: `@wiz64`
+Version : `v1.0` <br>
 ## Features
 - ⭕ All basic features of a music player
-- :green_apple: Download MP3 Songs with metadata
 - 🏠 Modern Design
-- 📱 Simplified Design for Mobile Devices
 - ♻ No ads, Open-Source, Optimised Code
 - 🎵 Large Library of Songs, Fetched Directly
   
@@ -25,27 +14,41 @@ Developers: `@wiz64`
 - Playlists
 - Song Sharing
 - Lyrics
+-download section
   
-## Installation / Usage
+Overview
+NIRA-Music Player is a stylish and user-friendly music player designed to enhance your music listening experience. It offers a variety of features, including a searchable library, playlists, downloads, and more.
 
-Files are completely static, and can be served directly to the browser. No installation is required, Just open the page on a browser and you're ready to rock.
-Downloader API is available at [wiz64/saadhna-mp3-server](https://github.com/wiz64/saadhna-mp3-server)
+Features
+Search Functionality: Easily search for your favorite songs, artists, or albums with the built-in search feature.
 
-<br>
+Library: Organize and manage your music collection in the Library section.
 
-## Deployment
-This can be deployed to any Web Hosting Service, Platforms like Vercel, Heroku, Replit, Github Pages or through applications like PHP, NodeJS (express.js) or Python(Flask)
+Playlist: Create and curate your own playlists for different moods or occasions.
 
-> Just anything that can serve plain HTML will work
+Downloads: Download your favorite songs for offline listening.
 
-<br>
+Liked Songs: Keep track of your liked songs in one convenient place.
 
-## Copyright & Credits
-> Developed by [@wiz64](https://github.com/wiz64) featuring API made by [@sumitkolhe](https://github/sumitkolhe) .
+Settings: Customize the player settings to suit your preferences.
 
-XDA - Off Topic Group
+Getting Started
+Clone the repository.
+Open the index.html file in your web browser.
+Explore the different sections of the music player.
 
-This code was licensed under MIT License. View [LICENSE FILE](./LICENSE)
-> &copy;  Copyright 2022 @wiz64
+Technologies Used
+HTML5
+CSS3
+JavaScript
+Bootstrap
+jQuery
+
+Credits
+Original design by wiz64
+Re-Designed by RAJ
+
+Disclaimer
+This content is not affiliated with, endorsed, sponsored, or specifically approved by any third-party music provider like Gaana, Saavn, Spotify. The application is not responsible for any copyright material.
 
 I am not responsible for any Third-Party Copyright Material, We do not host any copyrighted material on our servers or accounts.
